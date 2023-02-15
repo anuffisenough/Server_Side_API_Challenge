@@ -51,8 +51,33 @@ var currentForecastDiv = $("#todays-forecast");
 //Event listener on city search submit button, calls getWeather function, creates button for saved search future reference
  submitBtn.on("click", function() {
         getWeather();
-        savedCityButton.text($("#city-search").val());
-        searchListDiv.append(savedCityButton);
-       // var currentForecastHeading = $("<h3>").text($("#city-search" + today.format("dd MM YYYY")).val());
-       // currentForecastDiv.append(currentForecastHeading);
+        var citySearchArray = [];
+        var cityName = $("#city-search").val();
+
+        citySearchArray.push(cityName);
+        console.log(citySearchArray);
+//function to add new song to locally-stored object
+function addToSearchList() {
+	// if there is no search list, create one
+	if (localStorage.getItem(!"saved search")) {
+		var citySearchString = JSON.stringify(citySearchArray);
+		localStorage.setItem("saved search", citySearchString);
+	};
+	// if there is a search list, or if one is created, parse it here
+	citySearchArray = JSON.parse(localStorage.getItem("saved search"));
+	// sets maximum length of set-list to 8 songs
+	for (i =0; i < citySearchArray.length; i++) {
+		citySearchArray.push(cityName);
+		var citySearchString = JSON.stringify(citySearchArray);
+		localStorage.setItem("saved search", citySearchString);
+		}
+};
+
+        // citySearchArray.push(cityName);
+        // console.log(citySearchArray);
+        //localStorage.setItem("saved search", citySeachArray);
+        // savedCityButton.text($("#city-search").val());
+        // searchListDiv.append(savedCityButton);
+        // var currentForecastHeading = $("<h3>").text($("#city-search" + today.format("dd MM YYYY")).val());
+        // currentForecastDiv.append(currentForecastHeading);
  });
