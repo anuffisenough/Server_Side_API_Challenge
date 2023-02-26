@@ -14,14 +14,15 @@
     <div class="d-inline float-left" style="width: 20rem;" id="search-div">
       <h3 class="d-block">Seach for a City:</h3>
       <input class="d-block" id="city-search" placeholder="Enter City">
-      <button class="d-block text-center" id="submit">Get Weather</button>
+      <button type= "button" class="btn btn-primary btn-sm btn-block text-center" id="submit">Get Weather</button>
+      <ul class="d-block"></ul>
     </div>
     
     <div id="todays-forecast">
-      <h2 class="d-inline">City Date</h2><span>Icon</span>
-      <span class="d-block">Temp</span>
-      <span class="d-block">Wind</span>
-      <span class="d-block">Humidity</span>
+      <h2 class="d-inline"><span id="city-name"></span><span id="current-date"></span></h2><span id="current-icon"></span>
+      <span class="d-block" id="current-temp"></span>
+      <span class="d-block" id="current-wind"></span>
+      <span class="d-block" id="current-humidity"></span>
     </div>
     <section>
       <h3>5-Day Forecast:</h3>
@@ -30,59 +31,60 @@
       
       <div class="card bg-secondary" style="width: 12rem;">
         <div class="card-body bg-secondary text-light">
-          <h5 class="card-title">Day 1</h5>
+          <h5 class="card-title" id="day-one-date"></h5>
           <p class="card-text">
-            <span class="d-block" >Icon</span>
-            <span class="d-block">Temp</span>
-            <span class="d-block">Wind</span>
-            <span class="d-block">Humidity</span>
+            <span class="d-block" id="day-one-icon"></span>
+            <span class="d-block" id="day-one-temp"></span>
+            <span class="d-block" id="day-one-wind"></span>
+            <span class="d-block" id="day-one-humidity"></span>
           </p>
         </div>
       </div>
 
       <div class="card bg-secondary" style="width: 12rem;">
         <div class="card-body bg-secondary text-light">
-          <h5 class="card-title">Day 2</h5>
+          <h5 class="card-title" id="day-two-date"></h5>
           <p class="card-text">
-            <span class="d-block" >Icon</span>
-            <span class="d-block">Temp</span>
-            <span class="d-block">Wind</span>
-            <span class="d-block">Humidity</span>
+            <span class="d-block" id="day-two-icon"></span>
+            <span class="d-block" id="day-two-temp"></span>
+            <span class="d-block" id="day-two-wind"></span>
+            <span class="d-block" id="day-two-humidity"></span>
           </p>
         </div>
       </div>
 
       <div class="card bg-secondary" style="width: 12rem;">
         <div class="card-body bg-secondary text-light">
-          <h5 class="card-title">Day 3</h5>
+          <h5 class="card-title" id="day-three-date"></h5>
           <p class="card-text">
-            <span class="d-block" >Icon</span>
-            <span class="d-block">Temp</span>
-            <span class="d-block">Wind</span>
-            <span class="d-block">Humidity</span>
+            <span class="d-block" id="day-three-icon"></span>
+            <span class="d-block" id="day-three-temp"></span>
+            <span class="d-block" id="day-three-wind"></span>
+            <span class="d-block" id="day-three-humidity"></span>
           </p>
         </div>
       </div>
 
       <div class="card bg-secondary text-light" style="width: 12rem;">
         <div class="card-body bg-secondary">
-          <h5 class="card-title">Day 4</h5>
+          <h5 class="card-title" id="day-four-date"></h5>
           <p class="card-text">
-            <span class="d-block" >Icon</span>
-            <span class="d-block">Temp</span>
-            <span class="d-block">Wind</span>
-            <span class="d-block">Humidity</span>
+            <span class="d-block" id="day-four-icon"></span>
+            <span class="d-block" id="day-four-temp"></span>
+            <span class="d-block" id="day-four-wind"></span>
+            <span class="d-block" id="day-four-humidity"></span>
           </p>
         </div>
       </div>
 
       <div class="card bg-secondary text-light" style="width: 12rem;">
         <div class="card-body bg-secondary">
-          <h5 class="card-title">Day 5</h5>
+          <h5 class="card-title" id="day-five-date"></h5>
           <p class="card-text">
-            <span class="d-block" >Icon</span>
-            <span class="d-block">Temp</span>
-            <span class="d-block">Humidity</span>
+            <span class="d-block" id="day-five-icon"></span>
+            <span class="d-block" id="day-five-temp"></span>
+            <span class="d-block" id="day-five-wind"></span>
+            <span class="d-block" id="day-five-humidity"></span>
           </p>
         </div>
       </div>

@@ -1,6 +1,9 @@
 header {
     background-color: rgb(3, 3, 97);
 }
+span {
+    margin: 5px;
+}
 
 div {
     margin: 5px;
@@ -12,6 +15,11 @@ div {
     float:left;
     width: 300px;
     height: 700px;
+}
+
+button {
+    display: block;
+    
 }
 
 #todays-forecast {
