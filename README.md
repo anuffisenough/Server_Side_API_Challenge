@@ -2,30 +2,25 @@
 
 ## Description
 
-<!-- -This project aimed to add functionality to a password generating webpage. -->
+-This project was aimed at developing a weather forecasting application.
 
-<!-- -Using the provided starter code, prompts were added to request input from the user in order to determine password length and character type(s). -->
+-The application uses Open Weather API.
 
-<!-- -Each input was stored as a variable to be called upon later in determining the appropriate function(s) to generate an acceptable password. -->
+-Upon searching for a US city, the User is presented with current weather data for the searched city.
 
-<!-- -User input is validated, and a specific function is called to create a password that meets the desired criteria (unfinished). -->
+-The User is also provided with weather data for the following 5 days for the searched city.
 
-<!-- -The final password is generated, and will appear in the text area of the "Your Secure Password" box (unfinished). -->
+-Buttons are created for previously searched cities.
 
 ## Usage
 
-<!-- https://anuffisenough.github.io/Challenge_Module_3/ -->
+https://anuffisenough.github.io/Server_Side_API_Challenge/
 
 ### Screenshot
 
-<!-- ![screenshot of module 3 challenge](Assets/images/Screenshot.png) -->
+![Screenshot of Web API Challenge](weatherapplicationscreenshot.png)
 
-## Credits
+### Credits
 
-<!-- ![Mdn web docs tutorial on Window Prompts] https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt -->
-
-<!-- ![Mdn web docs tutorial on Commands] https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm -->
-
-
-
+![MDN Web Docs] https://developer.mozilla.org/en-US/docs/
 
