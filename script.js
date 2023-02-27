@@ -27,7 +27,7 @@ var submitBtn = $("#submit");
  function getWeather() {
 //Saves searched city name and inserts into geocoding API URL for lat and lon values first
     let cityName = $("#city-search").val();
-    var geoCodeUrl = "https://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=1&appid=58a61a91540094cdd0153e73a4505529";
+    var geoCodeUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=1&appid=58a61a91540094cdd0153e73a4505529";
 
     fetch(geoCodeUrl)
           .then(function (response) {
@@ -45,7 +45,7 @@ var submitBtn = $("#submit");
             localStorage.setItem("searched cities", searchedCities);
 
 //Inserts lat and lon values for searched city in weather search API URL
-            var currentForecastUrl = "https://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&appid=58a61a91540094cdd0153e73a4505529";
+            var currentForecastUrl = "http://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&appid=58a61a91540094cdd0153e73a4505529";
 
             fetch(currentForecastUrl)
                  .then(function (response) {
@@ -74,7 +74,7 @@ var submitBtn = $("#submit");
             let cityName = $('#city-name');
                   //console.log(cityName);
 
-            var fiveDayForecastUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=" + latitude + "&lon=" + longitude + "&appid=58a61a91540094cdd0153e73a4505529";
+            var fiveDayForecastUrl = "http://api.openweathermap.org/data/2.5/forecast?lat=" + latitude + "&lon=" + longitude + "&appid=58a61a91540094cdd0153e73a4505529";
             //console.log(fiveDayForecastUrl);
              fetch(fiveDayForecastUrl)
                  .then(function (response) {
