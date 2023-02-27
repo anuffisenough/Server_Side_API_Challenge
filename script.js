@@ -9,11 +9,11 @@ var submitBtn = $("#submit");
  var cityName = "";
 
  //function to add new button for each searched city
- function addSavedButton() {
-    let cityName = $("#city-search").val();
-    var searchedCityButton = $('<button>').val(cityName);
-    $('#search-div').push(searchedCityButton);    
-};
+//  function addSavedButton() {
+    // let cityName = $("#city-search").val();
+    // var searchedCityButton = $('<button>').text(cityName);
+    // $('#search-div').append(searchedCityButton);
+// };
 
 // function renderSavedCitiesButtons() {
 //     if (localStorage.getItem("searched cities") !== null) {
@@ -39,9 +39,9 @@ var submitBtn = $("#submit");
             var latitude = geoCodedata[0].lat;
             var longitude = geoCodedata[0].lon;
            // var searchedCities = [];
-            var searchedCity = geoCodedata[0].name
+            var foundCity = geoCodedata[0].name
 //stores the city name locally (stores the Open Weather return for city, not the user entered value)
-            searchedCities.push(searchedCity);
+            searchedCities.push(foundCity);
             localStorage.setItem("searched cities", searchedCities);
 
 //Inserts lat and lon values for searched city in weather search API URL
@@ -62,14 +62,14 @@ var submitBtn = $("#submit");
 
             //currentWeatherData.push(searchedCity, dayjs().format("(M/DD/YYYY)"), currentHumidity, currentTempF, currentWind, currentWeatherIcon);
             //console.log(currentWeatherData);
-            $('#city-name').text(searchedCity);
+            $('#city-name').text(foundCity);
             $('#current-date').text(dayjs().format("(M/DD/YYYY)"));
             $('#current-icon').text(currentWeatherIcon);
             $('#current-temp').text(`Temp: ${currentTempF} F`);
             $('#current-wind').text(`Wind: ${currentWind} MPH`);
             $('#current-humidity').text(`Humidity: ${currentHumidity}%`);
 
-
+            // console.log(foundCity);
 
             let cityName = $('#city-name');
                   //console.log(cityName);
@@ -92,30 +92,30 @@ var submitBtn = $("#submit");
             // var day5WeatherData = [];
 
             //date, icon, temp, wind, humidity
-            var day1Date =(fiveDayData.list[3].dt)*1000;
+            var day1Date =(dayjs().add(1, 'day').format("M/DD/YYYY"));
             var day1Icon = fiveDayData.list[3].weather[0].icon;
             var day1Temp = (((((fiveDayData.list[3].main.temp)-273.15)*9)/5)+ 32).toFixed(2);
-            var day1Wind = ((fiveDayData.list[3].wind.speed)*2.237).toFixed(2);;
+            var day1Wind = ((fiveDayData.list[3].wind.speed)*2.237).toFixed(2);
             var day1Humidity = fiveDayData.list[3].main.humidity;
-            var day2Date =(fiveDayData.list[11].dt)*1000;
+            var day2Date = (dayjs().add(2, 'day').format("M/DD/YYYY"));
             var day2Icon = fiveDayData.list[11].weather[0].icon;
             var day2Temp = (((((fiveDayData.list[11].main.temp)-273.15)*9)/5)+ 32).toFixed(2);
-            var day2Wind = ((fiveDayData.list[11].wind.speed)*2.237).toFixed(2);;
+            var day2Wind = ((fiveDayData.list[11].wind.speed)*2.237).toFixed(2);
             var day2Humidity = fiveDayData.list[11].main.humidity;
-            var day3Date =(fiveDayData.list[19].dt)*1000;
+            var day3Date = (dayjs().add(3, 'day').format("M/DD/YYYY"));
             var day3Icon = fiveDayData.list[19].weather[0].icon;
             var day3Temp = (((((fiveDayData.list[19].main.temp)-273.15)*9)/5)+ 32).toFixed(2);
-            var day3Wind = ((fiveDayData.list[19].wind.speed)*2.237).toFixed(2);;
-            var day3Humidity = fiveDayData.list[19].main.humidity9
-            var day4Date =(fiveDayData.list[27].dt)*1000;
+            var day3Wind = ((fiveDayData.list[19].wind.speed)*2.237).toFixed(2);
+            var day3Humidity = fiveDayData.list[19].main.humidity;
+            var day4Date = (dayjs().add(4, 'day').format("M/DD/YYYY"));
             var day4Icon = fiveDayData.list[27].weather[0].icon;
             var day4Temp = (((((fiveDayData.list[27].main.temp)-273.15)*9)/5)+ 32).toFixed(2);
-            var day4Wind = ((fiveDayData.list[27].wind.speed)*2.237).toFixed(2);;
+            var day4Wind = ((fiveDayData.list[27].wind.speed)*2.237).toFixed(2);
             var day4Humidity = fiveDayData.list[27].main.humidity;
-            var day5Date =(fiveDayData.list[35].dt)*1000;
+            var day5Date = (dayjs().add(5, 'day').format("M/DD/YYYY"));
             var day5Icon = fiveDayData.list[35].weather[0].icon;
             var day5Temp = (((((fiveDayData.list[35].main.temp)-273.15)*9)/5)+ 32).toFixed(2);
-            var day5Wind = ((fiveDayData.list[35].wind.speed)*2.237).toFixed(2);;
+            var day5Wind = ((fiveDayData.list[35].wind.speed)*2.237).toFixed(2);
             var day5Humidity = fiveDayData.list[35].main.humidity;
             // day1WeatherData.push(day1Date, day1Icon, day1Temp, day1Wind, day1Humidity);
 
@@ -149,7 +149,7 @@ var submitBtn = $("#submit");
             $('#day-five-wind').text(`Wind: ${day5Wind} MPH`);
             $('#day-five-humidity').text(`Humidity: ${day5Humidity}%`);
 
-            $("#city-search").text("");
+            // $("#city-search").text("");
 
             // console.log(day1Date);
             // console.log(day1Icon);
@@ -179,6 +179,12 @@ var submitBtn = $("#submit");
 
 
             // $(pElements[1]).text(`${currentWeatherIcon} ${currentTempF} "degrees F"  ${currentHumidity} "%" ${currentWind} "MPH"`);
+            var searchedCityButton = $('<button>').text(foundCity);
+            searchedCityButton.on("click", function() {
+                
+            })
+
+            $('#search-div').append(searchedCityButton);
                  
              }) 
         });
